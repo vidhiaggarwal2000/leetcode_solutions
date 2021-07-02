@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int jump(vector<int>& nums) {
+        int mja[nums.size()];
+        mja[0]=0;
+        for(int i=1;i<nums.size();i++){
+            mja[i]=INT_MAX;
+        }
+        int jpa[nums.size()];
+        for(int i=1;i<nums.size();i++){
+            for(int j=0;j<i;j++){
+                if(nums[j]+j>=i){
+                    mja[i]=min(mja[i],mja[j]+1);
+                    jpa[i]=j;
+                }
+            }
+        }
+        return mja[nums.size()-1];
+    }
+};
