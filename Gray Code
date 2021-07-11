@@ -1,0 +1,14 @@
+class Solution {
+public:
+    vector<int> grayCode(int n) {
+        int limit = pow(2, n);
+        vector<int> code;
+
+            code.push_back(0);
+            for (int i = 1; i < limit; i++) {
+                code.push_back(i ^ (i >> 1));
+            }
+
+            return code;
+    }
+};
