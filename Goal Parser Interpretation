@@ -1,0 +1,26 @@
+class Solution {
+public:
+    string interpret(string com) {
+        int i=0;
+        string ans;
+        while(i<com.length()){
+            if(com[i]=='('&&com[i+1]==')')
+            {
+                ans+='o';
+                i+=2;
+            }
+            if(com[i]=='G')
+            {
+                ans+='G';
+                i++;
+            }
+            if(com[i]=='('&&com[i+1]=='a')
+            {
+                ans+="al";
+                i+=4;
+            }
+               
+        }
+        return ans;
+    }
+};
