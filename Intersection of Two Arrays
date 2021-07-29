@@ -1,0 +1,29 @@
+class Solution {
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        vector<int> ans;
+        sort(nums1.begin(),nums1.end());
+        sort(nums2.begin(),nums2.end());
+        int s1=nums1.size();
+        int s2=nums2.size();
+        int i=0,j=0;
+        while(i<s1&&j<s2){
+            if(nums1[i]<nums2[j])
+                i++;
+            else if(nums1[i]>nums2[j])
+                j++;
+            else{
+                ans.push_back(nums1[i]);
+                int x=nums1[i];
+                i++;j++;
+                while(i<s1&&j<s2&&nums1[i]==x&&nums2[j]==x){
+                    i++;
+                    j++;
+                }
+                
+            }
+            
+        }
+        return ans;
+    }
+};
