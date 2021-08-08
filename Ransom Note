@@ -1,0 +1,20 @@
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        if(magazine.length()<ransomNote.length())
+            return false;
+        sort(ransomNote.begin(),ransomNote.end());
+        sort(magazine.begin(),magazine.end());
+        int i=0,j=0;
+        while(i<ransomNote.length()&&j<magazine.length()){
+            if(ransomNote[i]==magazine[j]){
+                i++;j++;
+            }
+            else
+                j++;
+        }
+        if(j==magazine.length()&&i<ransomNote.length())
+            return false;
+        return true;
+    }
+};
