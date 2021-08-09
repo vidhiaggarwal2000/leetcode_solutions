@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int singleNonDuplicate(vector<int>& nums) {
+        /*map<int,int> freq;
+        for(int i=0;i<nums.size();i++){
+            freq[nums[i]]++;
+        }
+        for(auto i:freq){
+            if(i.second<2)
+                return i.first;
+        }
+        return nums[0];*/
+        
+        
+        
+        
+        /*A number XOR itself is always 0.
+          A number XOR 0 always stays the number.
+          So if we just XOR the entire array, we will be left with the element that appears only once.*/
+          
+          
+          
+        int res=nums[0];
+        for(int i=1;i<nums.size();i++){
+            res^=nums[i];
+        }
+        return res;
+    }
+};
